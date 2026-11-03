@@ -1,0 +1,59 @@
+---
+output: md_document
+---
+
+# Which Die?
+
+The EM (Expectation-Maximization) Algorithm is a prominent optimization algorithm used to find maximum likelihood estimates of parameters that depend on the values of an unobserved latent variable.
+
+![](red-blue.png)
+Here, we assume that we have rolls from two six-sided dice: a red die and a blue die.
+
+We know that neither of the dice is fair, and that the blue die seems to roll '6's more frequently. 
+
+```{r warning = FALSE, message = FALSE}
+library(tidyverse)
+sixes <- readRDS("sixes.rds")
+```
+
+
+# Questions
+
+0. Create file `index.qmd` for the answers to the following questions.
+
+1. The file `sixes.rds` contains `r length(sixes)` repetitions of how many sixes show up in 12 rolls of one die (i.e. somebody picked up one of the dice, then rolled the same die twelve times, and counted the number of times a 6 was rolled).
+
+Tabulate the number of sixes and visualize the result. What would the result look like under the assumption of fair dice? State distribution assumptions you make and add the expected values with 95% C.I. to your visual. Comment on the result.
+
+```{r}
+sixes <- readRDS("sixes.rds")
+```
+
+2. Write out the probability for 'the rolls were made by the red die' versus 'the rolls were made by the blue die' given the `sixes`; similarly, write out the probability for 
+updating the parameters.
+
+3. Write out a function `em_step` that takes vectors `x` and `theta` as input and provides an updated version of `theta` as output. 
+
+Set initial values for `theta` and run the function once on the vector `sixes`.
+Report the updated values of `theta` and comment on them.
+
+4. Write a function `loglik` that takes `x` and `theta` as input and provides a numeric value of the loglikelihood.
+
+What is the loglikelihood value of the initial values for `theta` given `sixes`? What is the likelihood value after the first step?
+
+5. Wrap the two functions into  a function `em_binom` that takes `x` and `theta` as input,
+set defaults for the parameters `num_iterations` and `tol` (tolerance). 
+
+Run the `em_binom` function on the vector `sixes`. Report the vector `theta` after convergence (or 200 iterations, whichever comes first). 
+
+Plot the change in loglikelihood from the initial value to the last step. Comment on it. How certain are you in the results?
+
+6. The files `threes.rds` and `fives.rds` contain the information on the number of '3's and '5's from the same 1000 sets of rolls, i.e. you can assume that the same die was used for the $i$th observation across all of the vectors. 
+
+Run the `em_binom` on the vectors `threes` and `fives`. Which values would you expect to stay the same across all three results? How do you interpret if the values for $\pi_1$ and $\pi_2$ are flipped?
+
+
+## Submission
+
+Make sure that your file `index.qmd` includes all details to make your answers fully reproducible. 
+Ensure that the file renders properly. Add all relevant(!) files to the repository, commit, and push!
