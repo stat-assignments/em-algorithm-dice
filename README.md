@@ -20,50 +20,43 @@ roll ’6’s more frequently.
 2.  The file `sixes.rds` contains 1000 repetitions of how many sixes
     show up in 12 rolls of one die (i.e. somebody picked up one of the
     dice, then rolled the same die twelve times, and counted the number
-    of times a 6 was rolled).
+    of times a 6 was rolled). Read the file with the command `readRDS`
+    and save it in the object `sixes`. <br><br> Tabulate the number of
+    sixes and visualize the result. What would the result look like
+    under the assumption of fair dice? State distribution assumptions
+    you make and add the expected values with 95% C.I. to your visual.
+    Comment on the result.
 
-Tabulate the number of sixes and visualize the result. What would the
-result look like under the assumption of fair dice? State distribution
-assumptions you make and add the expected values with 95% C.I. to your
-visual. Comment on the result.
-
-    sixes <- readRDS("sixes.rds")
-
-1.  Write out the probability for ‘the rolls were made by the red die’
+3.  Write out the probability for ‘the rolls were made by the red die’
     versus ‘the rolls were made by the blue die’ given the `sixes`;
     similarly, write out the formula for updating the parameters.
 
-2.  Write out a function `em_step` that takes vectors `x` and `theta` as
-    input and provides an updated version of `theta` as output.
+4.  Write out a function `em_step` that takes vectors `x` and `theta` as
+    input and provides an updated version of `theta` as output. <br><br>
+    Set initial values for `theta` and run the function once on the
+    vector `sixes`. Report the updated values of `theta` and comment on
+    them.
 
-Set initial values for `theta` and run the function once on the vector
-`sixes`. Report the updated values of `theta` and comment on them.
+5.  Write a function `loglik` that takes `x` and `theta` as input and
+    provides a numeric value of the loglikelihood.<br><br> What is the
+    loglikelihood value of the initial values for `theta` given `sixes`?
+    What is the likelihood value after the first step?
 
-1.  Write a function `loglik` that takes `x` and `theta` as input and
-    provides a numeric value of the loglikelihood.
-
-What is the loglikelihood value of the initial values for `theta` given
-`sixes`? What is the likelihood value after the first step?
-
-1.  Wrap the two functions into a function `em_binom` that takes `x` and
+6.  Wrap the two functions into a function `em_binom` that takes `x` and
     `theta` as input, set defaults for the parameters `num_iterations`
-    and `tol` (tolerance).
+    and `tol` (tolerance). <br><br> Run the `em_binom` function on the
+    vector `sixes`. Report the vector `theta` after convergence (or 200
+    iterations, whichever comes first). <br><br> Plot the change in
+    loglikelihood from the initial value to the last step. Comment on
+    it. How certain are you in the results?
 
-Run the `em_binom` function on the vector `sixes`. Report the vector
-`theta` after convergence (or 200 iterations, whichever comes first).
-
-Plot the change in loglikelihood from the initial value to the last
-step. Comment on it. How certain are you in the results?
-
-1.  The files `threes.rds` and `fives.rds` contain the information on
+7.  The files `threes.rds` and `fives.rds` contain the information on
     the number of ’3’s and ’5’s from the same 1000 sets of rolls,
     i.e. you can assume that the same die was used for the *i*th
-    observation across all of the vectors.
-
-Run the `em_binom` on the vectors `threes` and `fives`. Which values
-would you expect to stay the same across all three results? How do you
-interpret if the values for *π*<sub>1</sub> and *π*<sub>2</sub> are
-flipped?
+    observation across all of the vectors. <br><br> Run the `em_binom`
+    on the vectors `threes` and `fives`. Which values would you expect
+    to stay the same across all three results? How do you interpret if
+    the values for *π*<sub>1</sub> and *π*<sub>2</sub> are flipped?
 
 ## Submission
 
