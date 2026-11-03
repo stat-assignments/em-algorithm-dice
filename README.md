@@ -31,7 +31,7 @@ visual. Comment on the result.
 
 1.  Write out the probability for ‘the rolls were made by the red die’
     versus ‘the rolls were made by the blue die’ given the `sixes`;
-    similarly, write out the probability for updating the parameters.
+    similarly, write out the formula for updating the parameters.
 
 2.  Write out a function `em_step` that takes vectors `x` and `theta` as
     input and provides an updated version of `theta` as output.

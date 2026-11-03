@@ -29,7 +29,7 @@ Tabulate the number of sixes and visualize the result. What would the result loo
 sixes <- readRDS("sixes.rds")
 ```
 
-2. Write out the probability for 'the rolls were made by the red die' versus 'the rolls were made by the blue die' given the `sixes`; similarly, write out the probability for 
+2. Write out the probability for 'the rolls were made by the red die' versus 'the rolls were made by the blue die' given the `sixes`; similarly, write out the formula for 
 updating the parameters.
 
 3. Write out a function `em_step` that takes vectors `x` and `theta` as input and provides an updated version of `theta` as output. 
