@@ -55,8 +55,9 @@ roll ’6’s more frequently.
     i.e. you can assume that the same die was used for the *i*th
     observation across all of the vectors. <br><br> Run the `em_binom`
     on the vectors `threes` and `fives`. Which values would you expect
-    to stay the same across all three results? How do you interpret if
-    the values for *π*<sub>1</sub> and *π*<sub>2</sub> are flipped?
+    to stay the same across all three results? What does it mean that
+    the values for *π*<sub>1</sub> and *π*<sub>2</sub> are flipped for
+    the fives?
 
 ## Submission
 

@@ -40,7 +40,7 @@ Run the `em_binom` function on the vector `sixes`. Report the vector `theta` aft
 Plot the change in loglikelihood from the initial value to the last step. Comment on it. How certain are you in the results?
 
 6. The files `threes.rds` and `fives.rds` contain the information on the number of '3's and '5's from the same 1000 sets of rolls, i.e. you can assume that the same die was used for the $i$th observation across all of the vectors. <br><br>
-Run the `em_binom` on the vectors `threes` and `fives`. Which values would you expect to stay the same across all three results? How do you interpret if the values for $\pi_1$ and $\pi_2$ are flipped?
+Run the `em_binom` on the vectors `threes` and `fives`. Which values would you expect to stay the same across all three results? What does it mean that the values for $\pi_1$ and $\pi_2$ are flipped for the fives?
 
 
 ## Submission
