@@ -4,8 +4,10 @@ The EM (Expectation-Maximization) Algorithm is a prominent optimization
 algorithm used to find maximum likelihood estimates of parameters that
 depend on the values of an unobserved latent variable.
 
-![](red-blue.png) Here, we assume that we have rolls from two six-sided
-dice: a red die and a blue die.
+![](red-blue.png)
+
+Here, we assume that we have rolls from two six-sided dice: a red die
+and a blue die.
 
 We know that neither of the dice is fair, and that the blue die seems to
 roll ’6’s more frequently.
